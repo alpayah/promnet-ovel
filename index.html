@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ceritaku - Baca dan Tulis Ceritamu</title>
+
+  <!-- Bootstrap 5 via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- CSS buatan sendiri -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR (Latihan 2) ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#beranda">Cerita<span class="aksen">ku</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#menuUtama" aria-controls="menuUtama"
+              aria-expanded="false" aria-label="Buka menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuUtama">
+        <div class="navbar-nav me-auto">
+          <a class="nav-link" href="#beranda">Beranda</a>
+          <a class="nav-link" href="#jelajah">Jelajah</a>
+          <a class="nav-link" href="#tentang">Tentang</a>
+          <a class="nav-link" href="#kontak">Kontak</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header id="beranda" class="hero bg-primary text-center text-white py-5">
+    <div class="container py-4">
+      <h1 class="display-5 fw-bold">Baca dan Tulis Ceritamu</h1>
+      <p class="lead">Temukan ribuan cerita dari penulis muda Indonesia, atau mulai menulis ceritamu sendiri.</p>
+      <a href="#jelajah" class="btn btn-warning btn-lg me-2">Mulai Membaca</a>
+      <a href="#kontak" class="btn btn-outline-light btn-lg">Kirim Cerita</a>
+    </div>
+  </header>
+
+  <!-- ========== SEMUA ISI DI DALAM CONTAINER ========== -->
+  <main class="container">
+
+    <!-- ========== JELAJAH: GRID CARD (Latihan 3) ========== -->
+    <section id="jelajah" class="py-5">
+      <h2 class="h3 mb-1">Jelajahi Cerita</h2>
+      <p class="text-muted mb-3">Klik tombol "Baca Sinopsis" untuk melihat ringkasan cerita.</p>
+
+      <!-- Kolom pencarian (Forms: form-control + input-group) -->
+      <div class="input-group mb-4">
+        <span class="input-group-text">🔍</span>
+        <input type="search" class="form-control" id="inputCari"
+               placeholder="Cari judul atau genre cerita..." aria-label="Cari cerita" />
+      </div>
+
+      <!-- Card dibuat otomatis oleh script.js, masing-masing memakai col-md-4 -->
+      <div class="row g-4" id="daftarCerita"></div>
+    </section>
+
+    <!-- ========== TABEL (Content: .table) ========== -->
+    <section id="populer" class="pb-5">
+      <h2 class="h3 mb-3">Cerita Terpopuler</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Judul</th>
+              <th>Penulis</th>
+              <th>Genre</th>
+              <th>Pembaca</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Negeri di Balik Awan</td><td>Salsabila A.</td><td>Fantasi</td><td>21 rb</td></tr>
+            <tr><td>2</td><td>Asrama Lantai Tiga</td><td>Dimas Anggara</td><td>Horor</td><td>15,2 rb</td></tr>
+            <tr><td>3</td><td>Surat untuk Hujan</td><td>Nadia Putri</td><td>Romantis</td><td>12,4 rb</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ========== ACCORDION FAQ (Components: Accordion) ========== -->
+    <section id="faq" class="pb-5">
+      <h2 class="h3 mb-3">Pertanyaan Umum</h2>
+      <div class="accordion" id="accordionFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+              Bagaimana cara membaca cerita?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+            <div class="accordion-body">Pilih cerita di bagian Jelajah, lalu klik tombol "Baca Sinopsis".</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              Bagaimana cara mengirim cerita saya?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+            <div class="accordion-body">Isi form di bagian Kontak dengan sinopsis ceritamu, lalu klik "Kirim Pesan".</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+              Apakah membaca di Ceritaku gratis?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+            <div class="accordion-body">Ya, semua cerita di website latihan ini gratis.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TENTANG ========== -->
+    <section id="tentang" class="pb-5">
+      <h2 class="h3 mb-3">Tentang Ceritaku</h2>
+      <p>Ceritaku adalah website latihan Bootstrap 5 untuk mata kuliah Pemrograman Internet. Konsepnya platform membaca dan menulis cerita online, dibuat sederhana dengan HTML, CSS, JavaScript, dan Bootstrap.</p>
+    </section>
+
+    <!-- ========== FORM KONTAK (Latihan 4) ========== -->
+    <section id="kontak" class="pb-5">
+      <h2 class="h3 mb-3">Kirim Cerita atau Pesan</h2>
+      <div class="row">
+        <div class="col-lg-8">
+          <form id="formKontak">
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama" placeholder="Masukkan nama" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="nama@email.com" required />
+            </div>
+            <div class="mb-3">
+              <label for="pesan" class="form-label">Pesan</label>
+              <textarea class="form-control" id="pesan" rows="4" placeholder="Tulis pesan atau sinopsis ceritamu" required></textarea>
+            </div>
+            <!-- Latihan 5: tombol ini memunculkan modal konfirmasi -->
+            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-light text-center py-3">
+    <small>&copy; 2026 Ceritaku &mdash; Tugas Pemrograman Internet</small>
+  </footer>
+
+  <!-- ========== MODAL SINOPSIS (isinya diganti lewat JS) ========== -->
+  <div class="modal fade" id="modalSinopsis" tabindex="-1" aria-labelledby="judulSinopsis" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="judulSinopsis">Judul</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-muted mb-2" id="infoSinopsis"></p>
+          <p id="isiSinopsis"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="button" class="btn btn-primary">Baca Sekarang</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MODAL KONFIRMASI KIRIM (Latihan 5) ========== -->
+  <div class="modal fade" id="modalKonfirmasi" tabindex="-1" aria-labelledby="judulKonfirmasi" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="judulKonfirmasi">Konfirmasi</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          Apakah Anda yakin ingin mengirim pesan ini?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-primary" id="btnYa">Ya, Kirim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS dulu, baru script sendiri -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* ===== Warna utama (variabel CSS) ===== */
+:root {
+  --warna-aksen: #ff7a45;
+  --warna-gelap: #1f1b2e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #faf8f5;
+}
+
+/* Supaya judul section tidak tertutup navbar yang menempel di atas */
+section {
+  scroll-margin-top: 70px;
+}
+
+.aksen {
+  color: var(--warna-aksen);
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(135deg, #3b2a8c, #7b3fe4 55%, var(--warna-aksen));
+}
+
+/* ===== Card cerita ===== */
+.card-cerita {
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-cerita:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Sampul cerita dibuat dari gradasi warna, tidak perlu gambar */
+.sampul {
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.badge-genre {
+  background-color: var(--warna-gelap);
+}
